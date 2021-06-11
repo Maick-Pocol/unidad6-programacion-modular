@@ -1,0 +1,49 @@
+package src;
+import java.util.*;
+
+public class ejercicio10{
+
+	public static void main(String[] args){
+		ejercicio10 ej = new ejercicio10();
+
+
+		Scanner entrada = new Scanner (System.in);
+		int matriz[][] = new int [3][4];
+
+
+		System.out.println("Digite la matriz");
+		for (int i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.print("Matriz["+i+"]["+j+"]: ");
+				matriz[i][j] = entrada.nextInt();
+
+			}
+		}
+
+		System.out.println("\nMatriz Original: ");
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.print(matriz[i][j]+" ");
+			}
+			System.out.println("");
+		}
+
+		//transponiendo la matriz
+		int aux;
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<i;j++) {
+				aux = matriz[i][j];
+				matriz[i][j] = matriz[j][i];
+				matriz[j][i] = aux;
+			}
+		}
+
+		System.out.println("\nLa matriz transpuesta es: ");
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.print(matriz[i][j]+" ");
+			}
+			System.out.println("");
+		}
+    }
+}
